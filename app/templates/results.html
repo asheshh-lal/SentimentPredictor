@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Analysis Results for Video ID: {{ response_data.video_id }}</h1>
+        
+        <h2>Comments Analyzed: {{ response_data.comments_count }}</h2>
+        
+        <h3>Top Words:</h3>
+        <ul>
+            {% for word, count in response_data.top_words %}
+                <li>{{ word }}: {{ count }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Sentiment Distribution:</h3>
+        <ul>
+            {% for sentiment, count in response_data.sentiment_distribution.items() %}
+                <li>{{ sentiment }}: {{ count }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Sentiment Distribution Pie Chart:</h3>
+        <img src="{{ response_data.pie_chart_path }}" alt="Sentiment Distribution Pie Chart" class="img-fluid">
+
+        <br>
+        <a href="/" class="btn btn-secondary mt-4">Analyze Another Video</a>
+    </div>
+</body>
+</html>

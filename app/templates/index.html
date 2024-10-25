@@ -3,40 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Sentiment Analysesssss</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        .container {
-            margin-top: 50px;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #343a40;
-        }
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
-    </style>
+    <title>YouTube Comment Analyzer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>YouTube Sentiment Analysis</h1>
-        <form action="/analyze" method="POST" class="mt-4">
+    <div class="container mt-5">
+        <h1>YouTube Comment Analyzer</h1>
+        <form action="/analyze" method="post">
             <div class="form-group">
-                <label for="video_id">YouTube Video ID:</label>
-                <input type="text" class="form-control" id="video_id" name="video_id" required>
-                <small class="form-text text-muted">Enter the ID of the YouTube video.</small>
+                <label for="video_id">Enter YouTube Video ID:</label>
+                <input type="text" class="form-control" id="video_id" name="video_id" placeholder="e.g. dQw4w9WgXcQ" required>
             </div>
             <button type="submit" class="btn btn-primary">Analyze</button>
         </form>
